@@ -1,0 +1,55 @@
+use strict;
+use [% kb_client %];
+use Pod::Usage;
+
+my $man  = 0;
+my $help = 0;
+GetOptions(
+	'h'	=> \$help,
+	'help'	=> \$help,
+	'man'	=> \$man,
+) or pod2usage(0);
+pod2usage(-exitstatus => 0,
+	  -output => \*STDOUT,
+	  -verbose => 2,
+	  -noperldoc => 1,
+	 ) if $help or $man;
+
+# do a little validation on the parameters
+
+
+# main logic
+my $r = [% kb_client %]->new();
+
+
+=pod
+
+=head1	NAME
+
+[% kb_method_name %]
+
+=head1	SYNOPSIS
+
+=over
+
+=item [% kb_method_name %] -h, --help, or --man
+
+=back
+
+=head1	DESCRIPTION
+
+The publish service calles the [% kb_method_name %] method of a [% kb_client %] object.
+
+=head1	COMMAND-LINE OPTIONS
+
+=over
+
+=item	-h, --help, --man  This documentation
+
+=back
+
+=head1	AUTHORS
+
+[% kb_author %]
+
+=cut
