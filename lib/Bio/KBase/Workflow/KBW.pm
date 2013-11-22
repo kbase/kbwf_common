@@ -12,6 +12,12 @@ sub install_path
 
 sub list_workflows
 {
+   my @list = ();
    my $wfd = install_path();
-   find (sub {print $File::Find::dir, "/", $_, "\n" unless -d;}, $wfd);
+   find (sub { push @list, $File::Find::dir . "/" . $_
+                 unless (-d or /KBW\.pm/);
+             }, $wfd);
+   return @list;
 }
+
+1;
