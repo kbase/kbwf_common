@@ -12,9 +12,9 @@ all:
 
 bin: 
 
-deploy: deploy-client deploy-scripts
-deploy-service: deploy-client deploy-scripts
-deploy-client: deploy-libs deploy-scripts
+deploy: deploy-client
+deploy-service: deploy-client
+deploy-client: deploy-lib deploy-scripts
 
 
 test:
