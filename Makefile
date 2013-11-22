@@ -4,6 +4,7 @@ TARGET ?= /kb/deployment
 
 include $(TOP_DIR)/tools/Makefile.common
 TESTS = $(wildcard tests/*.t)
+SRC_PERL = $(wildcard scripts/*.pl)
 
 WD = $(shell pwd)
 
@@ -11,9 +12,9 @@ all:
 
 bin: 
 
-deploy: deploy-client
-deploy-service: deploy-client
-deploy-client: deploy-libs
+deploy: deploy-client deploy-scripts
+deploy-service: deploy-client deploy-scripts
+deploy-client: deploy-libs deploy-scripts
 
 
 test:
