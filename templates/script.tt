@@ -26,19 +26,19 @@ my $r = [% kb_client %]->new();
 
 =head1	NAME
 
-[% kb_method_name %]
+[% kb_script_name %]
 
 =head1	SYNOPSIS
 
 =over
 
-=item [% kb_method_name %] -h, --help, or --man
+=item [% kb_script_name %] -h, --help, or --man
 
 =back
 
 =head1	DESCRIPTION
 
-The publish service calles the [% kb_method_name %] method of a [% kb_client %] object.
+The [% kb_script_name %] calls the [% kb_method_name %] method of a [% kb_client %] object.
 
 =head1	COMMAND-LINE OPTIONS
 

@@ -1,1 +1,1 @@
-tpage --define kb_client=Bio::KBase::ServiceRegistry::Client --define kb_method_name=publish_service --define kb_author="Thomas Brettin" script_modulino.tt
+tpage --define kb_client=Bio::KBase::Workflow::KBW --define kb_script_name=list --define kb_method_name=list_workflows --define kb_author="Thomas Brettin" script.tt
