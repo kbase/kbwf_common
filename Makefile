@@ -14,7 +14,7 @@ bin:
 
 deploy: deploy-client
 deploy-service: deploy-client
-deploy-client: deploy-lib deploy-scripts
+deploy-client: deploy-libs deploy-scripts
 
 
 test:
