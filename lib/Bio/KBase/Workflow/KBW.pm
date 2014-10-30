@@ -108,6 +108,7 @@ sub run_async {
     $task_cmd =~ m/^$method.(task\d+)_cmd_name$/;
     my $task_id = $1;
     my $task_cmd_args = arg_substituting( $args, $method_hash{"$method.$task_id\_cmd_args"}, $wc);
+    $task_cmd_args =~ s/KBWF_COMMON.ujs_jid/$ujs_job_id/g; # support ujs job id in command args
 
     my @inputs = grep /^$method.$task_id\_inputs_[^_]+_host$/, keys %method_hash;
     my %inputs =();
