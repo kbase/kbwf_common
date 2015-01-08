@@ -14,13 +14,14 @@ def arg_substituting (module, config, args, argument) :
   if not argument.endswith(" "):
     argument = argument + " "
   for key in args:
-    m = re.search('\${}(\s|\')'.format(key),argument)
+    m = re.search("\${}(?=\s|\')".format(key),argument)
     if m is not None:
       argument = argument.replace(m.group(0), args[key] + " ")
   for key in config:
-    m = re.search('{}\.{}(\s|\')'.format(module,key),argument)
+    m = re.search("{}\.{}(?=\s|\')".format(module,key),argument)
     if m is not None:
       argument = argument.replace(m.group(0), config[key] + " ")
+
   return argument
 
 
