@@ -11,8 +11,8 @@ from requests_toolbelt import MultipartEncoder
 import ConfigParser
 
 def arg_substituting (module, config, args, argument) :
-  if not argument.endswith(" "):
-    argument = argument + " "
+#  if not argument.endswith(" "):
+#    argument = argument + " "
   for key in args:
     m = re.search("\${}(?=\s|\')".format(key),argument)
     if m is not None:
