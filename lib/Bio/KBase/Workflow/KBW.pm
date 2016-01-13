@@ -169,6 +169,7 @@ sub run_async {
   close AJC;
 
   my $awe_res = `curl -s -X POST -H "Authorization: OAuth $token" -H "Datatoken: $token" -F "upload=\@$job_config_fn" $self->{_config}->{awe_url}/job`;
+  die "could not post upload to ", $self->{_config}->{awe_url}, "/job" if $?; 
   my $awe_ds = from_json($awe_res);
 
   my $job_id = [$awe_ds->{data}->{id},  $ujs_job_id];
