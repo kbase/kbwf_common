@@ -49,7 +49,7 @@ def run_async (config, ctx, args) :
 
 
   # UJS
-  status = 'Initializing'
+  status = 'Queued and waiting to start'
   description = method_hash["ujs_description"]
   progress = { 'ptype' : method_hash["ujs_ptype"], 'max' : method_hash["ujs_mstep"] };
 
